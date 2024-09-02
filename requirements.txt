@@ -1,3 +1,4 @@
+# 基本需要
 torch==2.4.0
 torchaudio==2.4.0
 torchvision==0.19.0
@@ -14,7 +15,6 @@ opencv-python
 pydub
 rapidocr_onnxruntime
 python-multipart
-
 # flag embedding用
 transformers
 datasets
@@ -22,12 +22,12 @@ sentence_transformers
 timm
 ftfy
 einops==0.8.0
-#
+# es等需要
 elasticsearch==8.14.0
 elastic-transport==8.13.1
 uvicorn==0.30.3
 fastapi==0.111.1
-#
+# 前端需要
 streamlit==1.37.1
 streamlit-option-menu==0.3.13
 streamlit-modal==0.1.2
