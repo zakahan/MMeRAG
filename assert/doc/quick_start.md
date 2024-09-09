@@ -99,6 +99,8 @@ pip install -r requirement.txt
 如果手动下载：
 需要下载五个模型文件，分别是向量化、音频解析用到的，这些路径全部都在config/mme_rag_config.py中配置了
 
+（2024-09-09：发现了点问题，bge-visualized的下载方法不会只下载一个.pth文件，可能需要你手动下载或者指定一下路径，确保vis_m3_path这个路径只会指向一个单独的文件，这个没太搞明白啥情况，之后再看吧）
+
 > - 这两个是图文向量化所用的模型，请参考[FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding)，因为我修改了一下FlagEmbedding的代码，所以可能得单独下载这两个模型。
 >   - [BAAI/Visualized-BGE](https://huggingface.co/BAAI/bge-visualized) - 对应vis_m3_path，这个没找到ModelScope路径
 >   - [BAAI/bge-m3](https://www.modelscope.cn/models/Xorbits/bge-m3/) - 对应vis_cfg_path
