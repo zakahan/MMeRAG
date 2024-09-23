@@ -125,7 +125,7 @@ pip install -r requirement.txt
 
 如果启动期间有ES配置问题，首先检查ES是否启动、密码是否填写，以及http_ca.crt证书是否存在等。
 默认是在8000端口 本地部署，修改config.servcer_config.back_host和back_port
-
+(注意：启动后如果报错不存在xx文件，则很有可能是你没有把证书文件放入项目中。)
 ![启动成功](../images/img10.png)
 
 6. 启动前端程序，
