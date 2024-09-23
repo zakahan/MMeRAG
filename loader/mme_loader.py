@@ -209,8 +209,7 @@ class MMeLoader:
 if __name__ == "__main__":
     import config.mme_rag_config as cfg
     mme = MMeLoader()
-    path = os.path.join(cfg.dataset_dir,
-                                 '两千块！带你装一台入门即毕业的八盘位万兆 NAS - 群晖入门 DIY NAS 详细教程.mp4')
+    path = os.path.join(cfg.dataset_dir,'bb.mp4')
     #
     res = mme.load(path)
 

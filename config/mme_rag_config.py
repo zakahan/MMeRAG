@@ -1,26 +1,28 @@
 import os
 
 PROJECT_PATH = os.path.dirname(os.path.dirname(__file__))
-
 dataset_dir = None  # 'this is a path for test'
 
-SENSE_VOICE_MODEL_PATH = os.path.join(PROJECT_PATH, 'models', 'SenseVoiceSmall')
-SENSE_VOICE_VAD_MODEL_PATH = os.path.join(PROJECT_PATH, 'models', 'fsmn_vad')
-vis_m3_path = os.path.join(PROJECT_PATH, 'models', 'Visualized-BGE', 'Visualized_m3.pth')
-vis_cfg_path = os.path.join(PROJECT_PATH, 'models', 'bge-m3')
-reranker_path = os.path.join(PROJECT_PATH, 'models', 'bge-reranker-v2-m3')
+# -------------------------------------------------
+MODEL_PATH = os.getenv('MME_MODEL_PATH') if os.getenv('MME_MODEL_PATH') is not None else os.path.join(PROJECT_PATH, 'models')
+SENSE_VOICE_MODEL_PATH = os.path.join(MODEL_PATH, 'iic', 'SenseVoiceSmall')
+SENSE_VOICE_VAD_MODEL_PATH = os.path.join(MODEL_PATH, 'iic', 'speech_fsmn_vad_zh-cn-16k-common-pytorch')
+vis_m3_path = os.path.join(MODEL_PATH, 'BAAI', 'Visualized-BGE', 'Visualized_m3.pth')
+vis_cfg_path = os.path.join(MODEL_PATH, 'BAAI', 'bge-m3')
+reranker_path = os.path.join(MODEL_PATH, 'BAAI', 'bge-reranker-v2-m3')
 
-KB_BASE_PATH = os.path.join(PROJECT_PATH, 'kb')
-KB_CONTENT_PATH = os.path.join(PROJECT_PATH, 'kb', 'content')
-KB_RAW_PATH = os.path.join(PROJECT_PATH, 'kb', 'raw')
-KB_TMP_PATH = os.path.join(PROJECT_PATH, 'kb', 'tmp')
+# -------------------------------------------------
+KB_BASE_PATH = os.getenv('MME_KB_PATH') if os.getenv('MME_KB_PATH') is not None else os.path.join(PROJECT_PATH, 'kb')
+KB_CONTENT_PATH = os.path.join(KB_BASE_PATH, 'content')
+KB_RAW_PATH = os.path.join(KB_BASE_PATH, 'raw')
+KB_TMP_PATH = os.path.join(KB_BASE_PATH, 'tmp')
 
 ALLOWED_EXTENSIONS = ['.mp4']
 # 上面两个全都改成wsl中的路径
 
 # 加载模型相关 主要关联部分为config.config_check.py
 CHECK_MODEL = True             # 是否检查模型加载情况，如果选择False就不需要每次都检查了
-DOWNLOAD_MODEL_BY_MIRROR = True
+DOWNLOAD_MODEL_BY_MIRROR = True # 是否要配置hf-mirror
 FIRST_DOWNLOAD_TYPE = 'ms'      # 优先从modelscope里下载
 
 # 关于elastic search

@@ -10,17 +10,17 @@ def mmelogger():
     file_handler.setLevel(logging.DEBUG)
 
     # 创建handler，用于输出到控制台
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO)
+    # console_handler = logging.StreamHandler()
+    # console_handler.setLevel(logging.INFO)
 
     # 定义handler的输出格式
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     file_handler.setFormatter(formatter)
-    console_handler.setFormatter(formatter)
+    # console_handler.setFormatter(formatter)
 
     # 添加handler到logger实例
     logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
+    # logger.addHandler(console_handler)
 
     return logger
 

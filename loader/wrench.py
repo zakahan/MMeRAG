@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
     import config.mme_rag_config as cfg
     import os
-    v_path = os.path.join(cfg.dataset_dir, '【中文字幕】YOASOBI不插电演唱会Acoustic Session小型现场たぶん & あの夢をなぞって【蓝光】@姐夫日剧字幕组.mp4')
+    v_path = os.path.join(cfg.dataset_dir, '【aa.mp4')
 
     x,y = check_av_exist(v_path)
 

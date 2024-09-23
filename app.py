@@ -7,7 +7,7 @@ import uvicorn
 from config.server_config import VERSION, back_host, back_port
 from apis.utils import BaseResponse
 from apis.crud_apis import list_kb, list_kb_details, create_kb, add_docs, delete_kb
-from apis.crud_apis import rename_kb, drop_all_kb, delete_docs, list_sub_db, upload_file_api
+from apis.crud_apis import drop_all_kb, delete_docs, list_sub_db, upload_file_api
 from apis.core_apis import chat_qa, bm25_search, vector_search, naive_rag_qa, advanced_rag_qa, query_decompose_rag_qa
 
 
@@ -36,10 +36,6 @@ def mount_app_routes(app: FastAPI):
     app.post('/mme/delete_kb',
              summary='删除知识库',
             )(delete_kb)
-
-    app.post('/mme/rename_kb',
-             summary='重命名知识库',
-             )(rename_kb)
 
     app.post('/mme/drop_all_kb',
              summary='清空所有知识库',

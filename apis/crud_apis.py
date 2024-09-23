@@ -253,36 +253,6 @@ def drop_all_kb(
         )
 
 
-# 8) 重命名知识库
-def rename_kb(
-        source_collection_name: str = Body(..., description='原知识库名称'),
-        dest_collection_name: str = Body(..., description='新知识库名称'),
-        elastic_vector: ElasticVector = Depends(depends_resource.get_vector),
-        sql_db: SQLiteBase = Depends(depends_resource.get_base)
-) -> BaseResponse:
-    # 两步操作，复制知识库，删除原来的知识库
-    try:
-        elastic_vector.create(dest_collection_name)
-        elastic_vector.copy(source_collection_name, dest_collection_name)
-        elastic_vector.drop_collection(source_collection_name)
-
-        # todo: 这个的sql还没做,而且反正前端也还没实现，所有我就不做了先，先别用
-
-        return BaseResponse(
-            code=200,
-            msg='知识库重命名成功',
-            data={}
-        )
-    except Exception as e:
-        return BaseResponse(
-            code=500,
-            msg=f'重命名过程出错',
-            data={
-                "exception": str(e),
-            }
-        )
-
-
 # ----------------------------------------------------
 # 文档类操作--------------------------------------------
 

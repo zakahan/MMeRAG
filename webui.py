@@ -4,6 +4,7 @@ from streamlit_option_menu import option_menu
 import web.response2back as r2b
 from web.custom_modal import VideoModal, AddModal, Modal
 from config.server_config import back_url
+from config.mme_rag_config import CHAT_API_KEY
 
 st.set_page_config(
     page_title="MMeRAG",
@@ -67,7 +68,7 @@ if 'model_index' not in st.session_state:
 if 'model_llm' not in st.session_state:
     st.session_state.model_llm = 'glm-4-flash'
 if 'user_api_key' not in st.session_state:
-    st.session_state.user_api_key = ''
+    st.session_state.user_api_key = CHAT_API_KEY        # 默认
 
 
 menu1 = '知识库处理'

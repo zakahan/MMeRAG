@@ -95,6 +95,7 @@ pip install -r requirement.txt
 中间可能遇到网络问题，建议通过配置镜像等方式解决
 
 5. 配置模型文件，（这一步在config.config_check.py中已经实现了，如果不乱动的话，理论上可以自动实现，（并没有仔细的验证过）。
+如果需要自己修改路径，请在config/mme_rag_config.py中修改
 
 如果手动下载：
 需要下载五个模型文件，分别是向量化、音频解析用到的，这些路径全部都在config/mme_rag_config.py中配置了

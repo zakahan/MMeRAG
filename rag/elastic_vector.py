@@ -51,6 +51,7 @@ class ElasticVector:
         except Exception as e:
             logger.info("ElasticVector 连接失败，错误信息：")
             logger.info(e)
+            print(e)
             raise Exception("ElasticVector 连接失败，请确定配置信息是否正确。")
         return client
 
