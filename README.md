@@ -6,6 +6,7 @@
 中文
 </div>
 
+
 ## 项目介绍
 MMeRAG
 本项目是一个音视频RAG项目，包括了对音频和视频的解析，加载，然后存储和问答。技术上其实也没有太复杂。
@@ -109,6 +110,12 @@ b. 这个人做过什么事情？
 ## 快速开始
 
 请参考文档 [quick_start](assert/doc/quick_start.md)
+
+当你部署完成，并成功启动项目，他大概是这个样子:
+
+![](assert/images/img12.png)
+
+![](assert/images/img13.png)
 
 ## 参考项目
 RAG部分的参考：

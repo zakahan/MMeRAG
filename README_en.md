@@ -107,6 +107,12 @@ I am still considering how to write this part and thinking about transforming it
 
 Check this [quick_start](assert/doc/quick_start_en.md)
 
+When you deploy and successfully start the project, it looks like this:
+
+![](assert/images/img12.png)
+
+![](assert/images/img13.png)
+
 ## Reference
 
 RAG：
